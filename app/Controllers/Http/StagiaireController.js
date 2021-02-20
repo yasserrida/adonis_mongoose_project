@@ -13,15 +13,11 @@ class StagiaireController {
 
   async store ({ request, response }) {
     const { cin, name, prenom, email, ln, dn ,tele, adress, sexe } = request.all()
-        try {
-            var stagiaire = new stagiaireModel({ cin:cin, name:name, prenom:prenom, email:email, ln:ln, dn:dn ,tele:tele, adress:adress, sexe:sexe });
-            await stagiaire.save(function (err) { if (err) console.log(err); });
-        }catch (error) { console.log(error); }
+    var stagiaire = new stagiaireModel({ cin:cin, name:name, prenom:prenom, email:email, ln:ln, dn:dn ,tele:tele, adress:adress, sexe:sexe });
+    await stagiaire.save(function (err) { if (err) console.log(err); });
   }
 
-  async show ({ params, request, response, view }) {
-
-  }
+  async show ({ params, request, response, view }) {}
 
   async edit ({ params, request, response, view }) {
     var stagiaire = await stagiaireModel.findOne({'_id' : params.id}).lean();
@@ -31,7 +27,7 @@ class StagiaireController {
   async update ({ params, request, response }) {
     const { cin, name, prenom, tele, email } = request.all()
     try {
-      var stagiaire = await stagiaireModel.findOne({'_id':params.id}).lean();
+      const stagiaire = await stagiaireModel.findOne({'_id' : params.id}).lean();
       stagiaire.cin = cin;
       stagiaire.name = name;
       stagiaire.prenom = prenom;
@@ -42,9 +38,9 @@ class StagiaireController {
   }
 
   async destroy ({ params, request, response }) {
-    try {
-
-    }catch (error) { console.log(error); }
+    stagiaireModel.deleteOne({ '_id': params.id }, function (err) {
+  		if (err) console.log(error);
+  	});
   }
 }
 

@@ -1,16 +1,16 @@
 @layout('base')
 
 @section('header')
-    <li class="active ripple" style="background-color:#DCDCDC;"><a class="nav-header" href="{{ route('/stagiaires') }}"> Stagiaires </a></li>
-    <li class="ripple"><a class="nav-header" href="{{ route('/formateurs') }}"> Formateurs </a></li>
-    <li class="ripple"><a class="nav-header" href="{{ route('/services') }}"> Services </a></li>
-    <li class="ripple"><a class="nav-header" href="{{ route('/filiéres') }}"> Filiéres </a></li>
-    <li class="ripple"><a class="nav-header" href="{{ route('/modules') }}"> Modules </a></li>
+    <li class="active ripple" style="background-color:#DCDCDC;"><a class="nav-header" href="/stagiaire"> Stagiaires </a></li>
+    <li class="ripple"><a class="nav-header" href="/formateurs"> Formateurs </a></li>
+    <li class="ripple"><a class="nav-header" href="/services"> Services </a></li>
+    <li class="ripple"><a class="nav-header" href="/filiéres"> Filiéres </a></li>
+    <li class="ripple"><a class="nav-header" href="/modules"> Modules </a></li>
 @endsection
 
 
 @section('content')
-<form method="POST" action="{{ route('/stagiaire') }}">
+<form method="POST" action="/stagiaire">
     {{ csrfField() }} 
     <div class="row">
         <div class="panel">
