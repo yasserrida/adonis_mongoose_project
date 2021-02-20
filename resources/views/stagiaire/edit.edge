@@ -1,0 +1,40 @@
+@layout('base')
+
+@section('header')
+    <li class="active ripple" style="background-color:#DCDCDC;"><a class="nav-header" href="{{ route('/stagiaires') }}"> Stagiaires </a></li>
+    <li class="ripple"><a class="nav-header" href="{{ route('/formateurs') }}"> Formateurs </a></li>
+    <li class="ripple"><a class="nav-header" href="{{ route('/services') }}"> Services </a></li>
+    <li class="ripple"><a class="nav-header" href="{{ route('/filiéres') }}"> Filiéres </a></li>
+    <li class="ripple"><a class="nav-header" href="{{ route('/modules') }}"> Modules </a></li>
+@endsection
+
+
+@section('content')
+<div class="row">
+    <div class="col-md-1 col-md-1"></div>
+    <div class="col-md-10 col-md-10" fadeInLeft>
+        <form method="put" action="{{ route(stagiaire._id) }}"> 
+            <br/>  
+            <input type="text" class="id" style="display:none" value="">                                
+            <div class="panel panel-primary">
+                <div class="panel-heading"><h4 class="panel-title">Modifier</h4></div>
+                <div class="panel-body">
+                    <div class="row"><div class="col-md-6 col-sm-6 animated fadeInLeft"><div class="form-group form-animate-text"><input type="text" class="form-text cin" value="{{ stagiaire.cin }}"><span class="bar"></span><label>CIN</label></div></div></div>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 animated fadeInLeft"><div class="form-group form-animate-text"><input type="text" class="form-text name" name="name" value="{{ stagiaire.name }}" required><span class="bar"></span><label>Nom</label></div></div>
+                        <div class="col-md-6 col-sm-6 animated fadeInLeft"><div class="form-group form-animate-text"><input type="text" class="form-text prenom" name="prenom" value="{{ stagiaire.prenom }}"required><span class="bar"></span><label>Prénom</label></div></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 animated fadeInLeft"><div class="form-group form-animate-text"><input type="text" class="form-text mask-phone tele" name="tel" value="{{ stagiaire.tel }}"  required><span class="bar"></span><label>Télèphone</label></div></div>
+                        <div class="col-md-6 col-sm-6 animated fadeInLeft"><div class="form-group form-animate-text"><input type="text" class="form-text mask-email email" name="email" value="{{ stagiaire.email }}"  required><span class="bar"></span><label>Email</label></div></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5 col-sm-5" id="msg1"></div>
+                        <div class="col-md-2 col-sm-3 animated fadeInLeft"><button type="submit" onclick="update_stag()" class="btn btn-round btn-success">Enregistrer</button></div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+@endsection

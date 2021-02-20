@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />        
+        <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="{{ csrfToken }}">
+        <title>Service</title>
+        <link rel="icon" type="image/png" href="{{ assetsUrl('img/logo-ofppt.gif.png') }}">
+        {{ style('asset/css/bootstrap.min') }} 
+        {{ style('asset/css/style') }} 	
+        {{ style('asset/css/plugins/font-awesome.min') }} 
+        {{ style('css/simple-line-icons/css/simple-line-icons') }} 
+        {{ style('asset/css/plugins/animate.min') }} 
+        {{ style('asset/css/plugins/datatables.bootstrap.min') }} 
+        {{ style('css/mystyle') }} 
+        {{ script('js/jquery.min') }}
+    </head>
+<body id="mimin" class="dashboard">
+    <!-- navbar -->
+    <nav class="navbar navbar-default header navbar-fixed-top">
+        <div class="col-12 col-Sd-12 col-md-12 col-lg-12 nav-wrapper">
+            <div class="navbar-header" style="width:100%;">
+                <div class="opener-left-menu is-open"><span class="top"></span><span class="middle"></span><span class="bottom"></span></div>
+                <a href="{{ route('/stagiaire') }}" class="navbar-brand"> <b>Service</b></a>
+                <ul class="nav navbar-nav navbar-right user-nav" rgb(83, 88, 92)>
+                    <li class="user-name"><span>
+                        {{ user.name }}
+                        </span></li>
+                    <li class="dropdown avatar-dropdown">
+                        <img src="{{ assetsUrl('asset/img/avatar.jpg') }}" class="img-circle avatar" alt="user name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"/>
+                        <ul class="dropdown-menu user-dropdown">
+                            <li class="more">
+                                <ul>
+                                    <li></li>
+                                    <li><a href=""><span class="fa fa-cogs"></span></a></li>
+                                    <li><a href="" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><span class="fa fa-lock"></span></a></li>
+                                    <form id="logout-form" action="{{ route('/logout') }}" method="POST" style="display: none;"></form>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- end: Header -->
+    <div class="container-fluid mimin-wrapper">
+        <!-- start:Left Menu -->
+        <div id="left-menu">
+            <div class="sub-left-menu scroll">
+                <ul class="nav nav-list">
+                    <li><div class="left-bg"></div></li>
+                    <li class="time"><h1 class="animated fadeInLeft"></h1><p class="animated fadeInRight"></p></li>
+                    @!section('header') 
+                </ul>
+            </div>
+        </div>
+        <!-- end: Left Menu -->
+
+        <!-- start: content -->
+        <div id="content">
+            @!section('content') 
+        </div>
+        <!-- end: content -->
+    </div>
+    <!-- start: Mobile -->
+    <div id="mimin-mobile" class="reverse">
+        <div class="mimin-mobile-menu-list">
+            <div class="col-12 col-Sd-12 col-md-12 col-lg-12 sub-mimin-mobile-menu-list animated fadeInLeft">
+                <ul class="nav nav-list">
+                    <li class="ripple"><a class="nav-header" href="{{ route('/stagiaires') }}"> Stagiaires </a></li>
+                    <li class="ripple"><a class="nav-header" href="{{ route('/formateurs') }}"> Formateurs </a></li>
+                    <li class="ripple"><a class="nav-header" href="{{ route('/services') }}"> Services </a></li>
+                    <li class="ripple"><a class="nav-header" href="{{ route('/filiéres') }}"> Filiéres </a></li>
+                    <li class="ripple"><a class="nav-header" href="{{ route('/modules') }}"> Modules </a></li>
+                </ul>
+            </div>
+        </div>       
+    </div>
+    <button id="mimin-mobile-menu-opener" class="animated rubberBand btn btn-circle btn-danger"><span class="fa fa-bars"></span></button>
+    <!-- end: Mobile -->
+    
+   
+    {{ script('js/bootstrap.bundle.min') }}
+    {{ script('asset/js/jquery.ui.min') }}
+    {{ script('js/popper') }}
+    {{ script('js/bootstrap.min') }}
+    {{ script('js/main') }}
+
+    <!-- plugins -->
+    {{ script('asset/js/plugins/jquery.mask.min') }}                
+    {{ script('asset/js/plugins/moment.min') }}                
+    {{ script('asset/js/plugins/jquery.datatables.min') }}                
+    {{ script('asset/js/plugins/datatables.bootstrap.min') }}                
+    {{ script('asset/js/plugins/jquery.nicescroll') }}                
+    {{ script('asset/js/main') }}                
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />        
+        <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="OFPPT">
+        <meta name="RIDA YASSER" content="Gérer l'ofppt">
+        <title>OFPPT</title>
+        <link rel="icon" type="image/png" href="img/logo-ofppt.gif.png">   
+        {{ style('css/bootstrap.min') }} 	
+        {{ style('asset/css/plugins/font-awesome.min') }} 
+        {{ style('css/simple-line-icons/css/simple-line-icons') }} 	
+        {{ style('css/landing-page.min') }} 	
+        {{ style('https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic') }} 	
+    </head>
+    <body>
+        <!-- Navigation -->
+        <nav class="navbar navbar-light bg-light static-top">
+            <div class="container">
+                <a class="navbar-brand" href="/">
+                    <img src="{{ assetsUrl('img/logo-ofppt.gif.png') }}" alt="OFPPT Logo" rel="tooltip" title="<b>OFPPT LOGO</b>" data-placement="bottom" data-html="true" style="width:2cm;height:1.5cm;border-radius:10px;background-color:transparent;">
+                </a>
+                
+            </div>
+            <a href="login" class="btn btn-primary">Se Connecter</a> &nbsp;
+            <a href="register" class="btn btn-primary">Register</a> 
+        </nav>
+
+        @!section('content')
+
+<!-- Footer -->
+<footer class="footer bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+                <ul class="list-inline mb-2">
+                    <!--
+                        <li class="list-inline-item"><a href="{ url('/') }}" > Acceuil</a></li>
+                        <li class="list-inline-item"></li>
+                        <li class="list-inline-item"><a href="{ route('login') }}">Se Connecter</a></li>
+                        <li class="list-inline-item"></li>-->
+                        <!-- <a href="{ route('register') }}">Register</a> -->
+                </ul>
+                <p class="text-muted small mb-4 mb-lg-0">&copy; OFPPT 2018. Tous droits réservés.</p>
+            </div>
+            <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item mr-3"><a href="https://fr-fr.facebook.com/OFPPT.Inscription/"><i class="fa fa-facebook fa-2x fa-fw"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Bootstrap core JavaScript -->
+{{ script('js/jquery.min') }}
+{{ script('js/bootstrap.bundle.min') }}
+</body>
+</html>

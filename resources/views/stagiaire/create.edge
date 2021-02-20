@@ -1,0 +1,63 @@
+@layout('base')
+
+@section('header')
+    <li class="active ripple" style="background-color:#DCDCDC;"><a class="nav-header" href="{{ route('/stagiaires') }}"> Stagiaires </a></li>
+    <li class="ripple"><a class="nav-header" href="{{ route('/formateurs') }}"> Formateurs </a></li>
+    <li class="ripple"><a class="nav-header" href="{{ route('/services') }}"> Services </a></li>
+    <li class="ripple"><a class="nav-header" href="{{ route('/filiéres') }}"> Filiéres </a></li>
+    <li class="ripple"><a class="nav-header" href="{{ route('/modules') }}"> Modules </a></li>
+@endsection
+
+
+@section('content')
+<form method="POST" action="{{ route('/stagiaire') }}">
+    {{ csrfField() }} 
+    <div class="row">
+        <div class="panel">
+            <div class="row">
+                <div class="col-1 col-sm-1 col-md-3"></div>
+                <div class="col-2 col-sm-2 col-md-3"><h3 class="animated fadeInLeft">Nouveau Stagiaire</h3></div>
+                <div class="col-2 col-sm-2 col-md-3" style="margin-top:16px;">
+                    <input type="button" id="plus" class="btn btn-round btn-success"  value="+"/>
+                </div>            
+            </div>
+            <div class="panel-body" id="aj" style="width:80%;margin-left:auto;margin-right:auto;">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 animated fadeInLeft" style="margin-top:2%;">
+                        <div class="form-group form-animate-text"><input id="cin" name="cin" type="text" class="form-text" required><span class="bar"></span><label>CIN</label></div>
+                    </div>
+                    <div class="col-md-3 col-sm-3"></div>
+                    
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 animated fadeInLeft"><div class="form-group form-animate-text"><input type="text" class="form-text" id="name" name="name" required><span class="bar"></span><label>Nom</label></div></div>
+                    <div class="col-md-6 col-sm-6 animated fadeInLeft"><div class="form-group form-animate-text"><input type="text" class="form-text" id="prenom" name="prenom" required><span class="bar"></span><label>Prénom</label></div></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 animated fadeInLeft"><div class="form-group form-animate-text"><input type="text" class="form-text" id="ln" name="ln"  required><span class="bar"></span><label>Lieu de naissance</label></div></div>
+                    <div class="col-md-6 col-sm-6 animated fadeInLeft"><div class="form-group form-animate-text"><input type="text" class="form-text mask-date" id="dn" name="dn" required><span class="bar"></span><label>Date de naissance</label></div></div>            
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 animated fadeInLeft"><div class="form-group form-animate-text"><input type="email" class="form-text" id="email" name="email" required><span class="bar"></span><label>Email</label></div></div>
+                    <div class="col-md-6 col-sm-6 animated fadeInLeft"><div class="form-group form-animate-text"><input type="text" class="form-text mask-phone" id="tele" name="tele" required><span class="bar"></span><label>Télèphone</label></div></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 animated fadeInLeft"><div class="form-group form-animate-text"><textarea type="text" class="form-text"  id="adress" name="adress" required></textarea><span class="bar"></span><label>Adresse</label></div></div>                
+                    <div class="col-md-6 col-sm-6 animated fadeInLeft"><select class="form-control" id="sexe" name="sexe"><option value="H">Masculin</option><option value="F">Féminin</option></select></div>
+                </div>
+                <div class="row">
+                </div>
+                <div class="row">
+                    <div class="col-md-2 col-sm-2 load">
+                        <div class="cssload-container">
+                            <div class="cssload-whirlpool"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3" id="msg"></div>
+                    <div class="col-md-2 col-sm-3 animated fadeInLeft"><button type="submit" class="btn ripple btn-raised btn-success"><div><span>Enregistrer</span></div></button></div>
+                </div>
+            </div>                    
+        </div>
+    </div>
+</form>
+@endsection
