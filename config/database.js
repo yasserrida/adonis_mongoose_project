@@ -36,7 +36,8 @@ module.exports = {
       database: Env.get('MONGO_DATABASE', 'adonis'),
       options: {
         useNewUrlParser: true,
-        useUnifiedTopology: true
+        useUnifiedTopology: true,
+        useFindAndModify: true
       },
       debug: false
     }
