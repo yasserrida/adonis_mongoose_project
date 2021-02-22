@@ -3,7 +3,7 @@
 const userModel = use('App/Models/users');
 const stagiaireModel = use('App/Models/stagiaire');
 const Hash = use('Hash')
-
+// auth
 class AuthController {
     async login ({ request, response, view }) {
         return view.render('auth/login')
